@@ -23,5 +23,9 @@
   "bugs": {
     "url": "https://github.com/jarofghosts/morse-stream/issues"
   },
-  "homepage": "https://github.com/jarofghosts/morse-stream"
+  "homepage": "https://github.com/jarofghosts/morse-stream",
+  "dependencies": {
+    "morse-codes": "0.0.0",
+    "through": "~2.3.4"
+  }
 }
