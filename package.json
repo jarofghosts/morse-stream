@@ -1,0 +1,27 @@
+{
+  "name": "morse-stream",
+  "version": "0.0.0",
+  "description": "transform words into morse code",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "node test/test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:jarofghosts/morse-stream.git"
+  },
+  "keywords": [
+    "morse",
+    "code",
+    "stream"
+  ],
+  "author": "jesse keane",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jarofghosts/morse-stream/issues"
+  },
+  "homepage": "https://github.com/jarofghosts/morse-stream"
+}
