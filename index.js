@@ -9,8 +9,16 @@ function morse_stream() {
   return stream
 
   function to_morse(data) {
-    var word = data.toString().toUpperCase(),
-        bits = word.split(''),
+    var phrase = data.toString().toUpperCase(),
+        words = phrase.split(' ')
+
+    for (var i = 0, l = words.length; i < l; ++i) {
+      convert_word(words[i])
+    }
+  }
+
+  function convert_word(word) {
+    var bits = word.split(''),
         morse = [],
         code,
         bit
