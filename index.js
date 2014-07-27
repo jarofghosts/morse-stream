@@ -1,32 +1,32 @@
-var through = require('through'),
-    codes = require('morse-codes')
+var codes = require('morse-codes')
+  , through = require('through')
 
-module.exports = morse_stream
+module.exports = morseStream
 
-function morse_stream() {
-  var stream = through(to_morse)
+function morseStream() {
+  var stream = through(toMorse)
 
   return stream
 
-  function to_morse(data) {
-    var phrase = data.toString().toUpperCase(),
-        words = phrase.split(' ')
+  function toMorse(data) {
+    var phrase = data.toString().toUpperCase()
+      , words = phrase.split(' ')
 
-    for (var i = 0, l = words.length; i < l; ++i) {
-      convert_word(words[i])
+    for(var i = 0, l = words.length; i < l; ++i) {
+      convertWord(words[i])
     }
   }
 
-  function convert_word(word) {
-    var bits = word.split(''),
-        morse = [],
-        code,
-        bit
+  function convertWord(word) {
+    var bits = word.split('')
+      , morse = []
+      , code
+      , bit
 
-    for (var i = 0, l = bits.length; i < l; ++i) {
+    for(var i = 0, l = bits.length; i < l; ++i) {
       bit = bits[i]
       code = codes[bit]
-      if (code) morse.push(code)
+      if(code) morse.push(code)
     }
 
     stream.queue(morse.join(' '))
