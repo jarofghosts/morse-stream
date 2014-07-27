@@ -1,7 +1,8 @@
 morse-stream
 ====
 
-[![Build Status](https://travis-ci.org/jarofghosts/morse-stream.png?branch=master)](https://travis-ci.org/jarofghosts/morse-stream)
+[![Build Status](http://img.shields.io/travis/jarofghosts/morse-stream.svg?style=flat)](https://travis-ci.org/jarofghosts/morse-stream)
+[![npm install](http://img.shields.io/npm/dm/morse-stream.svg?style=flat)](https://www.npmjs.org/package/morse-stream)
 
 transform words into morse code
 
