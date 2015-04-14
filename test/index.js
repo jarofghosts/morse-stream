@@ -10,8 +10,8 @@ test('converts words into morse code', function(t) {
 
   stream.on('data', result.push.bind(result))
   stream.on('end', function() {
-    t.equal('' + result[0], '.... . .-.. .-.. --- --..--')
-    t.equal('' + result[1], '.-- --- .-. .-.. -..')
+    t.equal('' + result[0].toString(), '.... . .-.. .-.. --- --..--')
+    t.equal('' + result[1].toString(), '.-- --- .-. .-.. -..')
   })
 
   stream.write('Hello,')
@@ -26,8 +26,8 @@ test('splits output by word boundary', function(t) {
 
   stream.on('data', result.push.bind(result))
   stream.on('end', function() {
-    t.equal(result[0], '.... . .-.. .-.. --- --..--')
-    t.equal(result[1], '.-- --- .-. .-.. -..')
+    t.equal(result[0].toString(), '.... . .-.. .-.. --- --..--')
+    t.equal(result[1].toString(), '.-- --- .-. .-.. -..')
   })
 
   stream.end('Hello, world')

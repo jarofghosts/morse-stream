@@ -1,5 +1,5 @@
 var codes = require('morse-codes')
-  , through = require('through')
+  , through = require('through2')
 
 module.exports = morseStream
 
@@ -8,13 +8,15 @@ function morseStream() {
 
   return stream
 
-  function toMorse(data) {
+  function toMorse(data, _, next) {
     var phrase = data.toString().toUpperCase()
       , words = phrase.split(' ')
 
     for(var i = 0, l = words.length; i < l; ++i) {
-      convertWord(words[i])
+      stream.push(convertWord(words[i]))
     }
+
+    next()
   }
 
   function convertWord(word) {
@@ -26,9 +28,12 @@ function morseStream() {
     for(var i = 0, l = bits.length; i < l; ++i) {
       bit = bits[i]
       code = codes[bit]
-      if(code) morse.push(code)
+
+      if(code) {
+        morse.push(code)
+      }
     }
 
-    stream.queue(morse.join(' '))
+    return morse.join(' ')
   }
 }
